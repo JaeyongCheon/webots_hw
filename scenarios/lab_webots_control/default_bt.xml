@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4">
+  <BehaviorTree ID="space-simulator">
+    <Sequence>
+      <SaveInitialPosition/>
+      <MoveToGoal/>
+      <CaptureImage/>
+      <ReturnToInitial/>
+    </Sequence>
+  </BehaviorTree>
+
+  <TreeNodesModel>
+    <Action ID="CaptureImage"
+            editable="true"/>
+    <Action ID="MoveToGoal"
+            editable="true"/>
+    <Action ID="ReturnToInitial"
+            editable="true"/>
+    <Condition ID="SaveInitialPosition"
+               editable="true"/>
+  </TreeNodesModel>
+
+</root>
