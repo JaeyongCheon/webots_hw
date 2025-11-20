@@ -12,6 +12,8 @@ ROS 2와 Behaviour Tree를 활용한 로봇 제어 시스템
 Webots 워크스페이스에서 다음 명령어를 실행하여 시뮬레이션 환경과 Nav2를 시작합니다:
 
 ```bash
+cd webots_hw/
+source install/local_setup.bash
 ros2 launch webots_ros2_turtlebot robot_launch.py nav:=true
 ```
 
@@ -34,7 +36,6 @@ RViz2에서 목표 위치 설정을 위한 도구를 구성합니다:
 
 1. RViz2 상단 툴바에서 **"2D Goal Pose"** 도구를 선택
 2. 왼쪽 패널의 **Tool Properties**에서 발행 토픽 이름을 `/bt/goal_pose`로 설정
-3. 설정 완료 후 맵에서 목표 위치를 클릭하여 goal pose 전달
 
 ### 3. Behaviour Tree 컨트롤러 실행
 
@@ -43,6 +44,7 @@ RViz2에서 목표 위치 설정을 위한 도구를 구성합니다:
 ```bash
 python3 main.py
 ```
+- 이후 RViz2에서 **"2D Goal Pose"** 도구를 통해서 목표 위치를 전달
 
 ### 동작 흐름
 
@@ -58,7 +60,7 @@ Behaviour Tree는 다음 순서로 작동합니다:
 캡처된 이미지는 다음 경로에 저장됩니다:
 
 ```
-scenarios/lab_webots_control/captured_images/
+~/webots_hw/scenarios/lab_webots_control/captured_images/
 ```
 
 파일명 형식: `captured_YYYYMMDD_HHMMSS.jpg` (예: `captured_20251119_143052.jpg`)
@@ -77,11 +79,5 @@ scenarios/lab_webots_control/captured_images/
   - `/capture_image`: 이미지 캡처 요청
   - `/save_images`: 캡처된 이미지 파일 저장
 
-### 설정 파일
-
-시나리오 설정은 `config.yaml`에서 변경 가능합니다:
-- BT tick rate
-- BT visualizer 옵션 (활성화/비활성화, 화면 크기, 방향)
-- Behavior Tree XML 파일 경로
 
 
